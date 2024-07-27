@@ -21,7 +21,7 @@ Default.args = {
 
 export const WithPortal = Template.bind({});
 WithPortal.args = {
-  options: ['Option 1', 'Option 2', 'Option 3'],
+  options: ['VueJs', 'ReactJs', 'Laravel', 'Angular'],
   multiple: true,
   searchable: true,
   zIndex: 1000,

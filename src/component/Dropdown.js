@@ -21,28 +21,15 @@ const Dropdown = ({
   useEffect(() => {
     if (usePortal) {
       document.body.appendChild(portalRef.current);
-      const currentPortal = portalRef.current; // Simpan nilai ref ke variabel
+      const currentPortal = portalRef.current;
       return () => {
-        document.body.removeChild(currentPortal); // Gunakan variabel di sini
+        document.body.removeChild(currentPortal);
       };
     }
   }, [usePortal]);
 
   const toggleDropdown = () => setIsOpen(!isOpen);
 
-//   const handleClickOutside = (event) => {
-//     if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-//         setIsOpen(false);
-//     }
-// };
-// useEffect(() => {
-//     document.addEventListener('mousedown', handleClickOutside);
-
-//     // Cleanup the event listener on component unmount
-//     return () => {
-//         document.removeEventListener('mousedown', handleClickOutside);
-//     };
-// }, []);
   const handleOptionClick = (option) => {
     let updatedSelectedOptions;
     if (multiple) {
@@ -122,7 +109,7 @@ const Dropdown = ({
         className="p-2 border border-gray-300 rounded cursor-pointer flex flex-wrap"
         onClick={toggleDropdown}
       >
-        {selectedOptions.length > 0 ? renderSelectedOptions() : 'Select options'}
+        {selectedOptions.length > 0 ? renderSelectedOptions() : 'Select framework'}
       </div>
       {isOpen && (usePortal ? ReactDOM.createPortal(dropdownMenu, portalRef.current) : dropdownMenu)}
       
